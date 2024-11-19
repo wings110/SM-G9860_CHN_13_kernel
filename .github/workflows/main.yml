@@ -46,9 +46,10 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/wings110/SM-G9860_CHN_13_kernel.git android-kernel --depth=1
-        chmod +x ../scripts/gcc-version.sh
-        chmod +x ../scripts/clang-version.sh
-        chmod +x ../scripts/gcc-plugin.sh
+
+    - name: sudo chmod+x
+      run: |
+          chmod -R +x $GITHUB_WORKSPACE/kernel_workspace/
 
     - name: 安装 ksu
       run: |
